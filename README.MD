@@ -70,3 +70,25 @@ Your legals.
   * Git
   * Rspec
 
+
+## Design decisions
+ - In reading template.txt file store the files in a variable and access individual value
+   grouping file lines into header, body and header, since it still a smaller file size
+    instead of 
+   
+   ```
+    File.foreach(file) do |row|
+      next @header << row if row.include?("A T&C Document")
+      next @footer << row if row.include?("Your legals.")
+      @body << row
+    end
+    ```
+
+    because when `A T&C Document` value is chnaged the code breaks
+
+
+### how much time you took
+
+### what you would have done if given more time
+
+ - Find a better way to read template file and store in variable
