@@ -1,5 +1,3 @@
-require_relative '../../helpers'
-
 module TemplateParser
   class InputFile
     def self.read(file)
