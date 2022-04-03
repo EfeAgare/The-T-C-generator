@@ -24,4 +24,5 @@ RSpec.describe 'TemplateParser::InpuFile' do
       expect(subject[1..-2]).to eq body
     end
   end
+end
   
