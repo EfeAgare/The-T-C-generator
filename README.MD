@@ -88,7 +88,33 @@ Your legals.
 
 
 ### how much time you took
+ - 6 hours
 
 ### what you would have done if given more time
 
  - Find a better way to read template file and store in variable
+
+## Setup
+ - Ensure you have [ruby](https://rvm.io/rvm/install) installed on your device
+
+   If you're not already in the exercise folder then run
+
+   ```
+    cd exercise
+   ```
+   otherwise skip and continue the command below to install gems
+
+   ```
+    bundle install
+   ```
+
+   Run the code running the command below
+
+   ```
+    ruby entry.rb
+   ```
+## Test
+
+   ```
+    rspec
+   ```

@@ -27,7 +27,7 @@ RSpec.describe 'TemplateParser::Tags' do
       input_file
       subject.process
 
-      expect(subject.tags).to eq new_body
+      expect(subject.sections_and_clauses).to eq new_body
     end
   end
 end

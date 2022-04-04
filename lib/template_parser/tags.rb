@@ -2,10 +2,10 @@ require 'json'
 
 module TemplateParser
   class Tags
-    attr_reader :tags
+    attr_reader :sections_and_clauses
 
-    def initialize(tags)
-      @tags = tags
+    def initialize(sections_and_clauses)
+      @sections_and_clauses = sections_and_clauses
     end
 
     def process
@@ -17,7 +17,7 @@ module TemplateParser
 
     def add_clause_tags_to_template
       read_clause_tags.each do |clause|
-        @tags.each do |tag|
+        @sections_and_clauses.each do |tag|
           if tag.include?("[CLAUSE-#{clause["id"]}]")
             tag.sub!("[CLAUSE-#{clause["id"]}]", "#{clause["text"]}")
           end
@@ -41,7 +41,7 @@ module TemplateParser
 
         ## assigned the text to the template to display the 
         ## exact clause text associated with the section id
-        @tags.each do |tag|
+        @sections_and_clauses.each do |tag|
           if tag.include?("[SECTION-#{section["id"]}]")
             tag.sub!("[SECTION-#{section["id"]}]", clause_tag_text)
           end
